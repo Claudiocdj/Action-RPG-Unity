@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour {
+public class EnemyScript : CreaturesScript {
 
-    public int health;
-    public float speed;
     public int secondsInvunerable;
     public bool isInvunerable = false;
 

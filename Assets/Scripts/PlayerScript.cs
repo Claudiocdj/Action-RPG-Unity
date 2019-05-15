@@ -8,10 +8,7 @@ public enum PlayerState {
     interact
 }
 
-public class PlayerScript : MonoBehaviour {
-
-    public float speed;
-    public float health;
+public class PlayerScript : CreaturesScript {
 
     private Rigidbody2D myRigidbody;
     private Animator myAnimator;

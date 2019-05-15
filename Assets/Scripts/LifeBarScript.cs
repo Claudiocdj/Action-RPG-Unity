@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class LifeBarScript : MonoBehaviour {
 
-    private EnemyScript enemyScript;
+    private CreaturesScript creatureScript;
     private GameObject myLifeBar;
     private float fullLife;
     private float currentLife;
 
     void Start() {
-        enemyScript = transform.root.GetComponent<EnemyScript>();
+        creatureScript = transform.root.GetComponent<CreaturesScript>();
 
         myLifeBar = transform.GetChild(0).gameObject;
 
-        fullLife = currentLife = enemyScript.health;
+        fullLife = currentLife = creatureScript.health;
     }
     
     void Update() {
-        if(enemyScript.health != currentLife) {
-            currentLife = enemyScript.health;
+        if(creatureScript.health != currentLife) {
+            currentLife = creatureScript.health;
 
             Vector3 lifeBarScale = myLifeBar.transform.localScale;
 
