@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Attack
   - DialogBox
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
@@ -17,10 +18,10 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
-  - 
+  - PlayerAttack
+  - EnemyAttack
+  - Background
+  - Enemy
   - 
   - 
   - 

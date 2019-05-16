@@ -2438,9 +2438,9 @@ TextureImporter:
       name: objects_124
       rect:
         serializedVersion: 2
-        x: 84
+        x: 83
         y: 82
-        width: 6
+        width: 9
         height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2564,7 +2564,7 @@ TextureImporter:
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 7, z: 7, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -2718,9 +2718,9 @@ TextureImporter:
       name: objects_138
       rect:
         serializedVersion: 2
-        x: 7
+        x: 64
         y: 4
-        width: 120
+        width: 63
         height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
