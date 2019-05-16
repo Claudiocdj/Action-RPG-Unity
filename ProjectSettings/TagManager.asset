@@ -5,9 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Attack
   - DialogBox
   - EnemyAttack
+  - PlayerAttack
+  - PlayerTrigger
+  - Attack
+  - Coin
   layers:
   - Default
   - TransparentFX
