@@ -7,7 +7,6 @@ public abstract class Attack : MonoBehaviour {
     public int force;
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log("Atacou meu menino");
         Destroy(gameObject);
     }
 }

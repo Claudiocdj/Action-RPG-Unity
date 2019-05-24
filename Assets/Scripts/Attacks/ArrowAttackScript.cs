@@ -10,14 +10,29 @@ public class ArrowAttackScript : Attack {
     void Start(){
         myRigidbody = GetComponent<Rigidbody2D>();
 
-        direction = direction.normalized * speed;
+        float angle = Vector2.Angle(direction, new Vector2(0f,1f));
+        
+        transform.eulerAngles = new Vector3(0, 0, FindDegree(direction.x, direction.y));
 
+        direction = direction.normalized * speed;
+        
         myRigidbody.AddForce(direction, ForceMode2D.Impulse);
 
-        Destroy(gameObject, 30f);
+        Destroy(gameObject, 3f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Destroy(gameObject);
+    }
+
+    public static float FindDegree(float x, float y) {
+        float value = (float)((Mathf.Atan2(x, y) / System.Math.PI) * -180f);
+        if (value < 0) value += 360f;
+
+        return value;
     }
 }
