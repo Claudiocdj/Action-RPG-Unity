@@ -9,9 +9,30 @@ public class MapTransiterScript : MonoBehaviour {
     public Vector3 newPlayerPos;
 
     private CameraScript cam;
+    private BoxCollider2D myBoxCollider;
 
     void Start() {
         cam = GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>();
+
+        myBoxCollider = GetComponent<BoxCollider2D>();
+
+        if (newPlayerPos.x != 0)
+            myBoxCollider.size = new Vector2(0.5f, myBoxCollider.size.y);
+
+        if (newPlayerPos.y != 0)
+            myBoxCollider.size = new Vector2(myBoxCollider.size.x, 0.5f);
+
+        if (newPlayerPos.x < 0)
+            myBoxCollider.offset = new Vector2(-0.5f * myBoxCollider.size.x, 0);
+
+        if (newPlayerPos.x > 0)
+            myBoxCollider.offset = new Vector2(0.5f * myBoxCollider.size.x, 0);
+
+        if (newPlayerPos.y > 0)
+            myBoxCollider.offset = new Vector2(0.5f * myBoxCollider.size.x, 0);
+        
+        if (newPlayerPos.y < 0)
+            myBoxCollider.offset = new Vector2(-0.5f * myBoxCollider.size.x, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
