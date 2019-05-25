@@ -29,10 +29,10 @@ public class MapTransiterScript : MonoBehaviour {
             myBoxCollider.offset = new Vector2(0.5f * myBoxCollider.size.x, 0);
 
         if (newPlayerPos.y > 0)
-            myBoxCollider.offset = new Vector2(0.5f * myBoxCollider.size.x, 0);
+            myBoxCollider.offset = new Vector2(0, 0.5f * myBoxCollider.size.y);
         
         if (newPlayerPos.y < 0)
-            myBoxCollider.offset = new Vector2(-0.5f * myBoxCollider.size.x, 0);
+            myBoxCollider.offset = new Vector2(0, -0.5f * myBoxCollider.size.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {

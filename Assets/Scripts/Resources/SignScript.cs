@@ -20,7 +20,7 @@ public class SignScript : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space) && isNear) {
+        if(Input.GetButtonDown("Fire2") && isNear) {
             dialogText.text = signText;
 
             dialogBox.SetActive(true);

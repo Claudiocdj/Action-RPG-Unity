@@ -11,6 +11,9 @@ TagManager:
   - PlayerTrigger
   - Attack
   - Coin
+  - npc
+  - NPCMenu
+  - ExclamationMark
   layers:
   - Default
   - TransparentFX
@@ -25,8 +28,8 @@ TagManager:
   - EnemyAttack
   - Background
   - Enemy
-  - 
-  - 
+  - NPC
+  - ExclamationMark
   - 
   - 
   - 

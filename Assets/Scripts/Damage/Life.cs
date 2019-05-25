@@ -5,6 +5,7 @@ using UnityEngine;
 public class Life : MonoBehaviour {
 
     public int life;
+    public int currentLife;
     public int secondsInvunerableEffect;
 
     private LifeBar lifeBar;
@@ -18,19 +19,19 @@ public class Life : MonoBehaviour {
 
         lifeBar = lifeBarInst.GetComponent<LifeBar>();
 
-        lifeBar.SetTotalLife(life);
+        lifeBar.SetTotalLife(currentLife);
     }
 
     public virtual void Damage(int damage, Collider2D collision) {
         StartCoroutine(DamageEffect());
 
-        life -= damage;
+        currentLife -= damage;
 
-        lifeBar.Actualize(life);
+        lifeBar.Actualize(currentLife);
 
         FloatingHitController.CreateFloatingHit(damage.ToString(), transform);
 
-        if (life <= 0) Destroy(gameObject);
+        if (currentLife <= 0) Destroy(gameObject);
     }
 
     private IEnumerator DamageEffect() {
