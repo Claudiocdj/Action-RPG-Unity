@@ -14,12 +14,14 @@ public class NPCMenu : MonoBehaviour {
     private PlayerAttack playerAttack;
     private Life playerLife;
     private InputsMove playerMove;
+    private BossDoor bossDoor;
 
     void Start() {
         playerCoins = GameObject.Find("Player").GetComponent<PlayerCoins>();
         playerAttack = GameObject.Find("Player").GetComponent<PlayerAttack>();
         playerLife = GameObject.Find("Player").GetComponent<Life>();
         playerMove = GameObject.Find("Player").GetComponent<InputsMove>();
+        bossDoor = GameObject.Find("Door").GetComponent<BossDoor>();
     }
 
     public void ResetArrows() {
@@ -84,7 +86,9 @@ public class NPCMenu : MonoBehaviour {
             else if (currentArrow == 4 && playerCoins.coins >= int.Parse(price[4].text)) {
                 playerCoins.RemoveCoins(int.Parse(price[4].text));
 
-                price[3].text = (int.Parse(price[3].text) * 9f).ToString();
+                bossDoor.OpenDoor();
+
+                price[4].text = "0";
             }
 
         }

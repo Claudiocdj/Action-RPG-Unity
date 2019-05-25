@@ -6,7 +6,8 @@ public class InputsMove : Movement {
     
     protected override void Start() {
         base.Start();
-        
+
+        DontDestroyOnLoad(gameObject);
     }
     
     protected virtual void Update() {
