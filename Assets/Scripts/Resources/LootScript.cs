@@ -6,7 +6,7 @@ public class LootScript : MonoBehaviour {
 
     public GameObject lootObject;
 
-    private void OnDestroy() {
+    public void InstantiateLoot() {
         Instantiate(lootObject, transform.position, Quaternion.identity);
     }
 

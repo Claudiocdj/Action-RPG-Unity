@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
+  currentLife: 2
   secondsInvunerableEffect: 1
   KnockBackForce: 10
   KnockBackTime: 0.1

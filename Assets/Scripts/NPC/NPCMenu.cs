@@ -54,31 +54,39 @@ public class NPCMenu : MonoBehaviour {
 
         else if (Input.GetButtonDown("Fire2")) {
             if(currentArrow == 0 && playerCoins.coins >= int.Parse(price[0].text)) {
-                playerCoins.RemoveCoins(10);
+                playerCoins.RemoveCoins(int.Parse(price[0].text));
 
                 playerAttack.attackForce++;
 
                 price[0].text = (int.Parse(price[0].text) * 2f).ToString();
             }
             else if(currentArrow == 1 && playerCoins.coins >= int.Parse(price[1].text)) {
-                playerCoins.RemoveCoins(10);
+                playerCoins.RemoveCoins(int.Parse(price[1].text));
 
                 playerMove.speed++;
 
                 price[1].text = (int.Parse(price[1].text) * 2f).ToString();
             }
             else if (currentArrow == 2 && playerCoins.coins >= int.Parse(price[2].text)) {
-                playerCoins.RemoveCoins(10);
+                playerCoins.RemoveCoins(int.Parse(price[2].text));
 
                 playerLife.life += 2;
 
                 price[2].text = (int.Parse(price[2].text) * 2f).ToString();
             }
             else if (currentArrow == 3 && playerCoins.coins >= int.Parse(price[3].text)) {
-                playerCoins.RemoveCoins(30);
+                playerCoins.RemoveCoins(int.Parse(price[3].text));
+
+                playerLife.Heal(playerLife.life);
 
                 price[3].text = (int.Parse(price[3].text) * 2f).ToString();
             }
+            else if (currentArrow == 4 && playerCoins.coins >= int.Parse(price[4].text)) {
+                playerCoins.RemoveCoins(int.Parse(price[4].text));
+
+                price[3].text = (int.Parse(price[3].text) * 9f).ToString();
+            }
+
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MapTransiterScript : MonoBehaviour {
-
+ 
     public MapScript nextMap;
 
     public Vector3 newPlayerPos;
@@ -38,10 +38,31 @@ public class MapTransiterScript : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Player")) {
 
+            InstantiateObjsOnNewMap();
+
+            RemoveObjectsOnCurrentMap();
+
             cam.minPos = nextMap.bottomLeftPos;
+
             cam.maxPos = nextMap.topRightPos;
 
             collider.transform.position += newPlayerPos;
         }
+    }
+
+    private void InstantiateObjsOnNewMap() {
+        ObjectsMap[] ObjectsToInstantiate = nextMap.GetComponents<ObjectsMap>();
+
+        if (ObjectsToInstantiate.Length > 0)
+            foreach (var obj in ObjectsToInstantiate)
+                obj.InstantiateEnemies();
+    }
+
+    private void RemoveObjectsOnCurrentMap() {
+        ObjectsMap[] ObjectsToDestroy = transform.parent.gameObject.GetComponents<ObjectsMap>();
+
+        if (ObjectsToDestroy.Length > 0)
+            foreach (var obj in ObjectsToDestroy)
+                obj.DestroyObjectsOnMap();
     }
 }

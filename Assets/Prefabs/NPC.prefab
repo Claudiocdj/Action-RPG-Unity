@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b7539ee84106246a9d9342f68a8fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcMenuBox: {fileID: 0}
+  npcMenuBox: {fileID: 5271273911479002727, guid: e59e33145ca03944dad4f96f8888f30d,
+    type: 3}

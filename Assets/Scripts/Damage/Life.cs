@@ -10,6 +10,14 @@ public class Life : MonoBehaviour {
 
     private LifeBar lifeBar;
 
+    public void Heal(int lifePoints) {
+        currentLife += lifePoints;
+
+        if (currentLife > life) currentLife = life;
+
+        lifeBar.Actualize(currentLife);
+    }
+
     protected virtual void Start() {
         GameObject lifeBarPrefab = Resources.Load<GameObject>("Prefabs/LifeBar");
 
@@ -31,7 +39,13 @@ public class Life : MonoBehaviour {
 
         FloatingHitController.CreateFloatingHit(damage.ToString(), transform);
 
-        if (currentLife <= 0) Destroy(gameObject);
+        if (currentLife <= 0) {
+            LootScript loot = gameObject.GetComponent<LootScript>();
+
+            if (loot != null) loot.InstantiateLoot();
+
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator DamageEffect() {

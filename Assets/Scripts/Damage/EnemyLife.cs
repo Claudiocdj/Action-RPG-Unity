@@ -26,8 +26,6 @@ public class EnemyLife : Life {
 
         difference = difference.normalized * KnockBackForce;
 
-        Debug.Log(difference);
-
         myRigidbody.AddForce(difference, ForceMode2D.Impulse);
 
         StartCoroutine(KnockBackEffect());

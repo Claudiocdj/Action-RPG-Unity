@@ -14,10 +14,15 @@ public class MapScript : MonoBehaviour {
     private Tilemap myTilemap;
 
     private void Start() {
-        myTilemap =  transform.Find("Background L1").GetComponent<Tilemap>();
+        
+        myTilemap =  this.transform.Find("Background L1").GetComponent<Tilemap>();
+
+        myTilemap.ResizeBounds();
 
         bottomLeftPos = myTilemap.localBounds.min;
 
         topRightPos = myTilemap.localBounds.max;
+
+        Debug.Log(gameObject.name + " = " + bottomLeftPos + " | " + topRightPos);
     }
 }
