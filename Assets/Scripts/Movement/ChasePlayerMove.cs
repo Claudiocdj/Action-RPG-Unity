@@ -20,6 +20,8 @@ public abstract class ChasePlayerMove : Movement {
 
         if (distToPlayer <= minDistForChase)
             ChasePlayer(distToPlayer);
+        else
+            SetAnimations(Vector3.zero);
     }
 
     protected abstract void ChasePlayer(float distToPlayer);

@@ -17,8 +17,11 @@ public class KeepDistanceMove : ChasePlayerMove {
     protected override void ChasePlayer(float distToPlayer) {
         Vector3 newPos = (transform.position - player.transform.position).normalized;
 
+        SetAnimations(newPos * -1f);
+
         newPos = (newPos * maxDistToPlayer) + player.transform.position;
 
         Move(newPos);
+        
     }
 }

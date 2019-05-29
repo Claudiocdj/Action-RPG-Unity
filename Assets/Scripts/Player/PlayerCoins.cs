@@ -10,6 +10,8 @@ public class PlayerCoins : MonoBehaviour {
 
     private void Start() {
         coinsMenu = GameObject.Find("CoinsMenu").GetComponent<CoinsMenu>();
+
+        coinsMenu.SetCoins(coins);
     }
 
     public void AddCoin(int quant) {
