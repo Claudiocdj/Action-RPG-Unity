@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour {
 
         player = GameObject.FindWithTag("Player");
 
-        timer = 0f;
+        timer = rateAttackInSeconds;
     }
 
     private void Update() {
