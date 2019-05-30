@@ -20,15 +20,17 @@ public class SummonEnemy : MonoBehaviour{
     }
 
     void Update() {
-        float distToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        if (GameObject.FindWithTag("Player")) {
+            float distToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (timer > rateInSeconds && distToPlayer <= minDistToSummon) {
-            timer = 0f;
+            if (timer > rateInSeconds && distToPlayer <= minDistToSummon) {
+                timer = 0f;
 
-            int randPos = Random.Range(0, pos.Length + 1);
+                int randPos = Random.Range(0, pos.Length);
 
-            Instantiate(enemy, pos[randPos], Quaternion.identity);
+                Instantiate(enemy, pos[randPos], Quaternion.identity);
+            }
+            else timer += Time.deltaTime;
         }
-        else timer += Time.deltaTime;
     }
 }

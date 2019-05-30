@@ -10,6 +10,14 @@ public class Life : MonoBehaviour {
 
     private LifeBar lifeBar;
 
+    public void AddLife(int lifePoints) {
+        life += lifePoints;
+
+        lifeBar.SetTotalLife(life);
+
+        lifeBar.Actualize(currentLife);
+    }
+
     public void Heal(int lifePoints) {
         currentLife += lifePoints;
 

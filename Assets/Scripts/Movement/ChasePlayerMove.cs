@@ -16,12 +16,14 @@ public abstract class ChasePlayerMove : Movement {
     }
 
     protected virtual void Update() {
-        distToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        if (GameObject.FindWithTag("Player")) {
+            distToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (distToPlayer <= minDistForChase)
-            ChasePlayer(distToPlayer);
-        else
-            SetAnimations(Vector3.zero);
+            if (distToPlayer <= minDistForChase)
+                ChasePlayer(distToPlayer);
+            else
+                SetAnimations(Vector3.zero);
+        }
     }
 
     protected abstract void ChasePlayer(float distToPlayer);

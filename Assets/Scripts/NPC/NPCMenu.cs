@@ -72,7 +72,7 @@ public class NPCMenu : MonoBehaviour {
             else if (currentArrow == 2 && playerCoins.coins >= int.Parse(price[2].text)) {
                 playerCoins.RemoveCoins(int.Parse(price[2].text));
 
-                playerLife.life += 2;
+                playerLife.AddLife(2);
 
                 price[2].text = (int.Parse(price[2].text) * 2f).ToString();
             }

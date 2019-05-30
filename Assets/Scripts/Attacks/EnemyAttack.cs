@@ -26,15 +26,17 @@ public class EnemyAttack : MonoBehaviour {
     }
 
     private void Update() {
-        dist = Vector3.Distance(player.transform.position, transform.position);
-        
-        if (timer > rate && dist >= minDist && dist <= maxDist) {
-            Attack();
+        if (GameObject.FindWithTag("Player")) {
+            dist = Vector3.Distance(player.transform.position, transform.position);
 
-            timer = 0f;
+            if (timer > rate && dist >= minDist && dist <= maxDist) {
+                Attack();
+
+                timer = 0f;
+            }
+            else
+                timer += Time.deltaTime;
         }
-        else
-            timer += Time.deltaTime;
     }
 
     private void Attack() {

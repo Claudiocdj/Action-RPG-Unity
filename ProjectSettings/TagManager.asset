@@ -14,6 +14,8 @@ TagManager:
   - npc
   - NPCMenu
   - ExclamationMark
+  - GameOver
+  - GameOverUI
   layers:
   - Default
   - TransparentFX

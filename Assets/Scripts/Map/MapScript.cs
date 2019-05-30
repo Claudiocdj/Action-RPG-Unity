@@ -22,7 +22,5 @@ public class MapScript : MonoBehaviour {
         bottomLeftPos = myTilemap.localBounds.min;
 
         topRightPos = myTilemap.localBounds.max;
-
-        Debug.Log(gameObject.name + " = " + bottomLeftPos + " | " + topRightPos);
     }
 }

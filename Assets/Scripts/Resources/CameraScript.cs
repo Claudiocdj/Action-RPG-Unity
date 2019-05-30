@@ -27,7 +27,7 @@ public class CameraScript : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (transform.position != playerTransform.position) {
+        if (GameObject.Find("Player") && transform.position != playerTransform.position) {
             Vector3 newPosition = new Vector3(playerTransform.position.x,
                                               playerTransform.position.y,
                                               transform.position.z);
