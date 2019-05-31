@@ -10,7 +10,7 @@ public class PlayerWin : MonoBehaviour {
                              .Cast<GameObject>().Where(g => g.tag == "GameOverUI")
                              .ToList()[0];
 
-        gameOver.GetComponent<GameOver>().setText("YOU ARE GREATE");
+        gameOver.GetComponent<GameOver>().setText("YOU ARE GREAT");
 
         GameObject player = GameObject.Find("Player");
 

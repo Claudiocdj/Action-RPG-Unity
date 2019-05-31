@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanvasScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
+public class CanvasScript : MonoBehaviour {
+
+    public GameObject pause;
+
+    private void Start() {
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            pause.SetActive(!pause.activeInHierarchy);
+        }
     }
 }
