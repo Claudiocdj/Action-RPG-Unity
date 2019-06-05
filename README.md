@@ -11,7 +11,7 @@ Jogo inspirado no clásico Zelda.
 
 <h3>Como jogar?</h3>
 
-Coloquei uma versão beta para ser jogada no próprio browser [aqui](https://opengameart.org/content/zelda-like-tilesets-and-sprites)
+Coloquei uma versão beta para ser jogada no próprio browser [aqui](https://fitinho.itch.io/tiny-action-rpg)
 
 <h3>Screenshots</h3>
 
